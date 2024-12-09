@@ -1,19 +1,6 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
+ * Application-wide styles with mobile responsiveness
  */
-
 
 body {
     font-family: Arial, sans-serif;
@@ -23,19 +10,34 @@ body {
     padding: 0;
 }
 
+/* Container styles */
 .container {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
 
+@media (min-width: 768px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+/* Heading styles */
 h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     color: #495057;
     margin-bottom: 20px;
 }
 
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* List styles */
 ul {
     list-style: none;
     padding: 0;
@@ -43,48 +45,94 @@ ul {
 
 li {
     margin: 10px 0;
-    padding: 10px;
+    padding: 15px;
     background-color: #ffffff;
     border: 1px solid #ced4da;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 li:hover {
     background-color: #e9ecef;
 }
 
+/* Link styles */
 a {
     text-decoration: none;
     color: #007bff;
+    font-size: 1rem;
+    word-wrap: break-word;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+@media (min-width: 768px) {
+    a {
+        font-size: 1.1rem;
+    }
 }
 
-li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
+/* Button styles */
 .button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    color: #fff;
+    margin-left: 0;
+    padding: 10px 15px;
+    color: #ffffff;
     background-color: #007bff;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    width: 100%;
 }
 
 .button:hover {
     background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+        margin-left: 10px;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    li {
+        padding: 10px;
+    }
+
+    .button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Accessibility and spacing improvements */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    li {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
