@@ -1,5 +1,5 @@
 /*
- * Application-wide styles with mobile responsiveness
+ * Mobile-only styles
  */
 
 body {
@@ -8,51 +8,42 @@ body {
     color: #343a40;
     margin: 0;
     padding: 0;
+    font-size: 14px; /* Optimized for mobile readability */
+    line-height: 1.5;
 }
 
 /* Container styles */
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 900px;
-    }
+    padding: 15px; /* Adjusted for smaller screens */
 }
 
 /* Heading styles */
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     color: #495057;
-    margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+    margin-bottom: 15px;
 }
 
 /* List styles */
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
     margin: 10px 0;
-    padding: 15px;
+    padding: 12px;
     background-color: #ffffff;
     border: 1px solid #ced4da;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: column; /* Stack content vertically */
+    gap: 8px;
 }
 
 li:hover {
@@ -64,53 +55,50 @@ a {
     text-decoration: none;
     color: #007bff;
     font-size: 1rem;
-    word-wrap: break-word;
+    word-wrap: break-word; /* Ensure long links wrap */
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-@media (min-width: 768px) {
-    a {
-        font-size: 1.1rem;
-    }
-}
-
 /* Button styles */
 .button {
-    margin-left: 0;
-    padding: 10px 15px;
+    width: 100%; /* Full width for easy tapping */
+    padding: 12px 15px;
     color: #ffffff;
     background-color: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
     text-align: center;
     font-size: 0.9rem;
-    cursor: pointer;
     border: none;
-    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box; /* Prevent padding overflow */
 }
 
 .button:hover {
     background-color: #0056b3;
 }
 
-@media (min-width: 768px) {
-    .button {
-        width: auto;
-        margin-left: 10px;
-    }
+/* Accessibility and spacing improvements */
+li {
+    align-items: stretch;
+    justify-content: space-between;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 600px) {
+.button + .button {
+    margin-top: 10px; /* Add spacing for stacked buttons */
+}
+
+/* Fine-tuned adjustments for very small screens */
+@media (max-width: 400px) {
     body {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     li {
@@ -119,20 +107,6 @@ a:hover {
 
     .button {
         font-size: 0.85rem;
-        padding: 8px 12px;
-    }
-}
-
-/* Accessibility and spacing improvements */
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@media (max-width: 600px) {
-    li {
-        flex-direction: column;
-        align-items: stretch;
+        padding: 10px;
     }
 }

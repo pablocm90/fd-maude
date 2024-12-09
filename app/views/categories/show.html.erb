@@ -12,14 +12,14 @@
   <h2>Service Tasks</h2>
   <ul>
     <% @category.service_tasks.each do |task| %>
-      <li><%= link_to task.name, category_service_path(@category, task) %>   <%= link_to "Add to Session", add_to_session_path(item_type: 'Task', item_id: task.id), class: "button" %></li>
+      <li><%= link_to task.name, category_service_path(@category, task) %>   <%= link_to "Add to Session", add_to_session_path(item_type: 'ServiceTask', item_id: task.id), class: "button" %></li>
     <% end %>
   </ul>
 
   <h2>Session Activities</h2>
   <ul>
     <% @category.session_activities.each do |activity| %>
-      <li><%= link_to activity.name, category_session_path(@category, activity) %>  <%= link_to "Add to Session", add_to_session_path(item_type: 'Activity', item_id: activity.id), class: "button" %></li>
+      <li><%= link_to activity.name, category_session_path(@category, activity) %>  <%= link_to "Add to Session", add_to_session_path(item_type: 'SessionActivity', item_id: activity.id), class: "button" %></li>
     <% end %>
   </ul>
 
