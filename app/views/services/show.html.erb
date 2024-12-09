@@ -1,0 +1,5 @@
+<h1><%= @service_task.name %></h1>
+<p><%= @service_task.description %></p>
+<%= link_to "Add to Session", add_to_session_path(item_type: 'Service', item_id: @service_task.id), class: "button" %>
+
+<%= link_to "Back to Service Tasks", category_path(@service_task.category) %>

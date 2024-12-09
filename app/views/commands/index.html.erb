@@ -1,0 +1,9 @@
+<h1>Commands in <%= @category.name %></h1>
+<ul>
+  <% @commands.each do |command| %>
+    <li>
+      <%= link_to command.name, category_command_path(@category, command) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to Categories", categories_path %>

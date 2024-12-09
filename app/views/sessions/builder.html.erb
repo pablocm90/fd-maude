@@ -1,0 +1,26 @@
+<h1>Session Builder</h1>
+<div id="session-items">
+  <p>Loading your session...</p>
+</div>
+
+<button onclick="clearSession()">Clear Session</button>
+
+<script>
+  // Display session items on the page
+  const sessionItems = getSessionItems();
+  const container = document.getElementById("session-items");
+  container.innerHTML = sessionItems.length
+      ? `
+      <ul>
+        ${sessionItems
+          .map(
+              (item) => `
+          <li>
+            <strong>${item.type}:</strong> ${item.name}
+          </li>`
+          )
+          .join("")}
+      </ul>
+    `
+      : "<p>No items in your session yet!</p>";
+</script>

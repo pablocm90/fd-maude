@@ -1,0 +1,27 @@
+<div class="container">
+  <h1><%= @category.name %></h1>
+  <p><%= @category.description %></p>
+
+  <h2>Commands</h2>
+  <ul>
+    <% @category.commands.each do |command| %>
+      <li><%= link_to command.name, category_command_path(@category, command) %>  <%= link_to "Add to Session", add_to_session_path(item_type: 'Command', item_id: command.id), class: "button" %></li>
+    <% end %>
+  </ul>
+
+  <h2>Service Tasks</h2>
+  <ul>
+    <% @category.service_tasks.each do |task| %>
+      <li><%= link_to task.name, category_service_path(@category, task) %>   <%= link_to "Add to Session", add_to_session_path(item_type: 'Task', item_id: task.id), class: "button" %></li>
+    <% end %>
+  </ul>
+
+  <h2>Session Activities</h2>
+  <ul>
+    <% @category.session_activities.each do |activity| %>
+      <li><%= link_to activity.name, category_session_path(@category, activity) %>  <%= link_to "Add to Session", add_to_session_path(item_type: 'Activity', item_id: activity.id), class: "button" %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Back to Categories", categories_path %>
+</div>

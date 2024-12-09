@@ -1,0 +1,5 @@
+<h1><%= @session_activity.name %></h1>
+<p><%= @session_activity.description %></p>
+<%= link_to "Add to Session", add_to_session_path(item_type: 'Session', item_id: @session_activity.id), class: "button" %>
+
+<%= link_to "Back to Session Activities", category_path(@session_activity.category) %>

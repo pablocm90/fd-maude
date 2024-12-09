@@ -1,0 +1,16 @@
+<h1><%= @current_session.name %></h1>
+
+<% if @current_session_items.any? %>
+  <ul>
+    <% @current_session_items.each do |session_item| %>
+      <li>
+        <strong><%= session_item.item_type %>:</strong> <%= session_item.item.name %>
+        <p><%= session_item.item.description %></p>
+        <%= link_to "Remove", remove_from_session_path(session_item.id), class: "button" %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Clear Session", clear_session_path, class: "button" %>
+<% else %>
+  <p>No items in the session yet.</p>
+<% end %>

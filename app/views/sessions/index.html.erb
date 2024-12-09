@@ -1,0 +1,7 @@
+<h1>Session Activities in <%= @category.name %></h1>
+<ul>
+    <% @session_activities.each do |activity| %>
+    <li><%= link_to activity.name, category_session_path(@category, activity) %></li>
+    <% end %>
+</ul>
+<%= link_to "Back to Categories", categories_path %>

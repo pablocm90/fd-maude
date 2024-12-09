@@ -1,0 +1,4 @@
+<h1><%= @command.name %></h1>
+<p><%= @command.description %></p>
+<%= link_to "Add to Session", add_to_session_path(item_type: 'Command', item_id: @command.id), class: "button" %>
+<%= link_to "Back to Commands", category_path(@command.category) %>
