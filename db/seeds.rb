@@ -3,6 +3,8 @@ Category.destroy_all
 Command.destroy_all
 ServiceTask.destroy_all
 SessionActivity.destroy_all
+CurrentSessionItem.destroy_all
+CurrentSession.destroy_all
 
 # Sensual Play Commands
 sensual_play_commands = [
