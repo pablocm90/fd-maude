@@ -1,4 +1,4 @@
-put "Clearing existing data..."
+puts "Clearing existing data..."
 Category.destroy_all
 Command.destroy_all
 ServiceTask.destroy_all
